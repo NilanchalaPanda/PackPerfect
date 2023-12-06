@@ -22,27 +22,29 @@ export default function Form({ onAddItmes }) {
       <h3>What do you need for your trip?</h3>
 
       {/* FORM */}
-      <select
-        value={quantity}
-        onChange={(e) => {
-          setQuantity(Number(e.target.value));
-        }}
-      >
-        {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
-          <option value={num} key={num}>
-            {num}
-          </option>
-        ))}
-      </select>
-      <input
-        type="text"
-        placeholder="Item..."
-        value={desc}
-        onChange={(e) => {
-          setDesc(e.target.value);
-        }}
-      />
-      <button>Add</button>
+      <div className="formDetails">
+        <select
+          value={quantity}
+          onChange={(e) => {
+            setQuantity(Number(e.target.value));
+          }}
+        >
+          {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
+            <option value={num} key={num}>
+              {num}
+            </option>
+          ))}
+        </select>
+        <input
+          type="text"
+          placeholder="Item..."
+          value={desc}
+          onChange={(e) => {
+            setDesc(e.target.value);
+          }}
+        />
+      </div>
+      <button className="addButton">Add</button>
     </form>
   );
 }
